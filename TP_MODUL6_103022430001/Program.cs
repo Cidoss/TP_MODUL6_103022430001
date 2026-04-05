@@ -8,10 +8,18 @@ namespace TP_MODUL6_103022430001
         {
             SayaMusicTrack track1 = new SayaMusicTrack("Pirates of the Carabian");
 
-            track1.IncreasePlayCount(100);
-            track1.IncreasePlayCount(2500);
+            Console.WriteLine("Memulai pengujian overflow...");
 
-            track1.PrintTrackDetails();
+            for(int i = 0; i < 250; i++)
+            {
+                track1.IncreasePlayCount(10000000);
+
+                if(i % 50 == 0)
+                {
+                    track1.PrintTrackDetails();
+                }
+            }
+            Console.WriteLine("Pengujian selesai.");
 
             Console.ReadLine();
         }
